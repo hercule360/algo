@@ -1,0 +1,24 @@
+ALGORITHM nb_length_insentce 
+VAR
+    str : STRING :="the best in the wrold "; 
+    count : INTEGER :=0;
+BEGIN
+    FOR (int i= 0 ; i < str.lenght() ; i++ ) DO
+    IF (str .charAT[i] != '')THEN 
+       count++;
+ END_IF
+ END_FOR 
+ END
+
+ALGORITHM  Nbr_world_in_sentence 
+VAR
+    str : STRING :="the best in the world "; 
+    count : INTEGER :=0
+BEGIN
+     FOR i in Str  DO 
+     if Str [i] == " " THEN 
+     count++
+     END_IF
+   END_FOR
+   wirte(count)  
+END

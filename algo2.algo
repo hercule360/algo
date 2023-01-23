@@ -1,0 +1,19 @@
+ALGORITHM sum_distinct
+VAR
+    set1, set2 : ARRAY_of INTEGER;
+    sum: INTEGER := 0; 
+    s1,s2 : INTEGER;
+
+BEGIN
+     REPEAT
+       Read(s1)
+       Read(s2)
+       UNTIL(s1 != 0 AND S2 !=0)
+       Read (set1);
+       Read(set2);
+     FOR i FROM 0 to set1.length-1 DO 
+     FOR j FROM 0 TO set2.length-1 DO 
+     IF(set1[i]<> set2[j]) THEN 
+     sum := sum+set1[i]
+        
+END

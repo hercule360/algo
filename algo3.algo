@@ -1,0 +1,33 @@
+PROCEDURE dot_prodact(v1,v2 : ARRAY_of INTEGER , var  dot : INTEGER     )
+VAR
+    i: INTEGER, 
+BEGIN
+    dot := 0; 
+    if:=0;
+    if (v1.lenght <> v2.lenght) THEN 
+    wirte ('vecrtor with diffrent sizes , we cannot calcluate dot dot_prodact')
+    dot:= NAN ; 
+    END_IF
+    WHILE (i< V1.lenght ) DO 
+         dot:= dot + v1[i]*v2[i];
+    END_WHILE
+END
+
+
+ALGORITHM arth_vectors 
+VAR
+    v1,v2 : ARRAY_of INTEGER [50];
+    dot : INTEGER; 
+BEGIN
+    n1 := read_size();
+    read_array (n1,v1); 
+
+    n2 := read_size();
+    read_array (n2,v2);
+    dot_prodact(v1,v2);
+    IF ( dot= 0 ) THEN
+    wirte('v1 and v2  are orthogonal ');
+    ELSE 
+    wirte(''v1 and v2  are not  orthogonal ')
+    END_IF
+END
