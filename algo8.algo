@@ -1,0 +1,53 @@
+PROCEDURE swap(VAR xp,VAR yp : INTEGER)
+VAR
+    tmp : INTEGER;
+BEGIN
+    tmp : = xp;
+    xp := yp;
+    yp := tmp;
+END
+
+FUNCTION partition(VAR arr : ARRAY_OF INTEGER, low, high : INTEGER) : INTEGER
+VAR
+    b,i, pivot : INTEGER;
+BEGIN
+    pivot := arr[high]; 
+    b := low -1; 
+
+    FOR i FROM low TO high-1  DO
+    
+        IF (arr[i] < pivot) THEN
+            b := b+1;    
+            swap(arr[b],arr[i]);
+        END_IF
+    END_FOR
+    swap(arr[b+1],arr[high]);
+    RETURN b+1 ;
+END
+
+
+PROCEDURE quick_sort(VAR arr : ARRAY_OF INTEGER, l, h :INTEGER)
+
+    
+    stack : STACK;
+    p : INTEGER;
+BEGIN
+    stack.push(l);
+    stack.push(h);
+    
+    WHILE (NOT stack.isEmpty()) DO
+        h := stack.pop();
+        l := stack.pop();
+         
+        p := partition(arr,l,h);
+        
+        IF (p-1 > l) THEN
+            stack.push(l);
+            stack.push(p-1);
+        END_IF
+        IF (p+1 < h) THEN
+            stack.push(p+1);
+            stack.push(h);
+        END_IF
+    END_WHILE
+END

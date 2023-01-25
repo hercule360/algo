@@ -1,0 +1,20 @@
+FUNCTION binary_search(arr : ARRAY_OF INTEGER) : INTEGER
+VAR
+   left, right, mid : INTEGER;
+BEGIN
+   left := 0;
+   right := arr.length-1;
+   WHILE (left < right) DO
+       mid := left + (right - left)/2;
+       IF (arr[mid] = x) THEN
+           RETURN mid;
+       END_IF
+       IF (arr[mid] < x) THEN
+           left := mid+1;
+       ELSE
+       right := mid-1;
+       END_IF
+   END_WHILE
+   RETURN -1  ;
+END
+
